@@ -4,7 +4,6 @@ describe('wait coomand - examples', () => {
   });
 
   it('pause command', async () => {
-    // проба пера
     // const clickMe_Button = await $("//span[@id='button1']");
     // await browser.pause(10000)
     // await clickMe_Button.click()
