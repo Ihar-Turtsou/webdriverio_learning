@@ -27,7 +27,8 @@ describe('webdriveruniversity - contact us page', function() {
     await message.setValue('Helo I am John Smith');
 
     //await browser.debug()
-    await submitButton.click();
+    // await submitButton.click();
+    await browser.waitThenClick(submitButton)
 
     const successfulSubmitionHeader = $('#contact_reply>h1');
     await expect(successfulSubmitionHeader).toHaveText('Thank You for your Message!');
