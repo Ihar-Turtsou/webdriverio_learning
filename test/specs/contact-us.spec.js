@@ -1,12 +1,13 @@
 // npx wdio --spec contact-us.spec.js
 import allureReporter from "@wdio/allure-reporter"
+import ContactUsPage from "../pageObjects/webdriver-university/contact-us.page"
 
 
 describe('webdriveruniversity - contact us page', function() {
   // this.retries(1);
   
   beforeEach(async () => {
-    await browser.url('/Contact-Us/contactus.html');
+    await ContactUsPage.open();
     console.log(`>>Broeser Object: + ${JSON.stringify(browser)}`);
     });
     
