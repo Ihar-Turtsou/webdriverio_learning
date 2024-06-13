@@ -1,7 +1,7 @@
 // npx wdio --spec contact-us.spec.js
 import allureReporter from "@wdio/allure-reporter"
 import ContactUsPage from "../pageObjects/webdriver-university/contact-us.page"
-import contactUsPage from "../pageObjects/webdriver-university/contact-us.page";
+
 
 describe('webdriveruniversity - contact us page', function() {
   // this.retries(1);
@@ -17,10 +17,10 @@ describe('webdriveruniversity - contact us page', function() {
     allureReporter.addDescription("Validate contact us page by submitting all data");
     allureReporter.addSeverity("Critical")
 
-    contactUsPage.submitForm('Joe','Smith','Joesmith@gmail.con','Helo I am John Smith')
+    ContactUsPage.submitForm('Joe','Smith','Joesmith@gmail.con','Helo I am John Smith')
 
-    const successfulSubmitionHeader = $('#contact_reply>h1');
-    await expect(successfulSubmitionHeader).toHaveText('Thank You for your Message!');
+
+    await expect(ContactUsPage.successfulSubmissionHeader).toHaveText('Thank You for your Message!');
 
   });
 
@@ -29,13 +29,18 @@ describe('webdriveruniversity - contact us page', function() {
     allureReporter.addDescription("Validate contact us page by not submitting all data");
     allureReporter.addSeverity("Normal")
 
-    contactUsPage.submitForm('Joe','Smith','','Helo I am John Smith')
+    ContactUsPage.submitForm('Joe','Smith','','Helo I am John Smith')
 
-    const successfulSubmitionHeader = $('body');
-    await expect(successfulSubmitionHeader).toHaveTextContaining (['Error: all fields are required', 'Error: Invalid email address']);
+
+    await expect(ContactUsPage.unSuccessfulSubmitionHeader).toHaveTextContaining (['Error: all fields are required', 'Error: Invalid email address']);
 
     // const successfulSubmitionHeader = await $('body').getText();
     // expect(successfulSubmitionHeader).toContain('Error: all fields are required');
     // expect(successfulSubmitionHeader).toContain('Error: Invalid email address');
+  });
+
+  it('Only set a first name', async () => {
+    ContactUsPage.submitForm('Joe','','','');
+    await expect(ContactUsPage.unSuccessfulSubmitionHeader).toHaveTextContaining (['Error: all fields are required', 'Error: Invalid email address']);
   });
 });
