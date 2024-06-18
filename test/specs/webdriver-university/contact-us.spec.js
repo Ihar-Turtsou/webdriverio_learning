@@ -1,6 +1,6 @@
 // npx wdio --spec contact-us.spec.js
 import allureReporter from "@wdio/allure-reporter"
-import ContactUsPage from "../pageObjects/webdriver-university/contact-us.page"
+import ContactUsPage from "../../pageObjects/webdriver-university/contact-us.page"
 
 
 describe('webdriveruniversity - contact us page', function() {

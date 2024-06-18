@@ -1,11 +1,11 @@
 //npx wdio --spec add-items-to-basket.spec.js
+import HomePage from "../../pageObjects/automation-test-store/home.page";
 
 describe('add items to basket', () => {
  
-    
     it('add specific products to basket & validate cart total', async () => {
-        await browser.url("https://automationteststore.com/");
-        // await $("//a[text()='Skincare']").click();
+        await HomePage.open();
+       
         const skincareLinks = await $$("//a[contains(text(), 'Skincare')]")
         await skincareLinks[1].click()
 
