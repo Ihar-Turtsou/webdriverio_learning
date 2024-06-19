@@ -3,6 +3,7 @@ import allureReporter from "@wdio/allure-reporter"
 import ContactUsPage from "../../pageObjects/webdriver-university/contact-us.page"
 
 
+
 describe('webdriveruniversity - contact us page', function() {
   // this.retries(1);
   
@@ -17,7 +18,7 @@ describe('webdriveruniversity - contact us page', function() {
     allureReporter.addDescription("Validate contact us page by submitting all data");
     allureReporter.addSeverity("Critical")
 
-    ContactUsPage.submitForm('Joe','Smith','Joesmith@gmail.con','Helo I am John Smith')
+    ContactUsPage.submitForm_UsingRandomData('Joe','Smith')
 
 
     await expect(ContactUsPage.successfulSubmissionHeader).toHaveText('Thank You for your Message!');
