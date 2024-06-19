@@ -1,5 +1,7 @@
 import BasePage from "./base.page";
 import ItemComponent from "../automation-test-store/components/item.comp"
+import HeaderNavComp from "./components/header-nav.comp";
+import CartPage from "./cart.page";
 
 class SkinCarePage extends BasePage {
     get itemComponent(){
@@ -32,15 +34,16 @@ class SkinCarePage extends BasePage {
             formatedItemPrices.forEach(price=>itemsTotal+=parseFloat(price))  
         }
         
-        await $("//span[text()='Cart']").click()
+        // await $("//span[text()='Cart']").click()
+        await HeaderNavComp.cartLink.click();
         await expect(browser).toHaveUrl(expect.stringContaining("checkout")) 
         
-        let shipingRate = await $("//span[contains(text(), 'Flat Shipping Rate:')]/../following-sibling::td").getText()
+        let shipingRate = await CartPage.shipingRate.getText()
         shipingRate = shipingRate.replace('$','')
         itemsTotal += parseFloat(shipingRate) 
         
         // extract cart total
-        let cartTotal =  await $('//span[text()="Total:"]/../following-sibling::td').getText()
+        let cartTotal = await CartPage.cartTotal.getText()
         cartTotal = cartTotal.replace('$','')
         expect(itemsTotal).toEqual(parseFloat(cartTotal))
 
