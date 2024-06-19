@@ -25,11 +25,21 @@ exports.config = {
   // The path of the spec files will be resolved relative from the directory of
   // of the config file unless it's absolute.
   //
-  specs: ['./test/specs/**/*.js'],
+  specs: ['./test/specs/**/**/*.js'],
   // Patterns to exclude.
   exclude: [
     // 'path/to/excluded/files'
   ],
+  suites: {
+    smoke: [
+      'test/specs/automation-test-store/add-items-to-basket.spec.js',
+     " test/specs/webdriver-university/locating-elements.spec.js",
+     "test/specs/webdriver-university/contact-us.spec.js"
+    ],
+    webStore: [
+      'test/specs/automation-test-store/add-items-to-basket.spec.js'
+    ],
+  },
   //
   // ============
   // Capabilities
@@ -54,10 +64,31 @@ exports.config = {
   //
   capabilities: [
     {
-      maxInstances: 5,
+      maxInstances: 2,
       browserName: 'chrome',
       acceptInsecureCerts: true,
+      "goog:chromeOptions" : {
+        args: [
+          "--incognito"
+        ],
+      },
+      timeouts: {
+        "pageLoad": 30000
+      }
     },
+    {
+      maxInstances: 2,
+      browserName: 'firefox',
+      "moz:firefoxOptions" : {
+        args: [
+          "-privat"
+        ],
+      },
+      timeouts: {
+        "pageLoad": 30000
+      }
+     
+    }
   ],
 
   //
@@ -107,7 +138,8 @@ exports.config = {
   // Services take over a specific job you don't want to take care of. They enhance
   // your test setup with almost no effort. Unlike plugins, they don't add new
   // commands. Instead, they hook themselves up into the test process.
-  services: [['chromedriver', { version: '121.0.2' }]],
+  services: [['chromedriver', { version: '121.0.2' }],['geckodriver']],
+  // services: ['selenium-standalone'],
   //
   // Framework you want to run your specs with.
   // The following are supported: Mocha, Jasmine, and Cucumber

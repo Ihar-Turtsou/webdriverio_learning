@@ -5,7 +5,10 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "wdio": "wdio run ./wdio.conf.js"
+    "wdio": "wdio run ./wdio.conf.js",
+    "automation-test-store-test": "npx wdio --spec test/specs/automation-test-store/add-items-to-basket.spec.js",
+    "webdriver-university-test": "npx wdio --spec test/specs/webdriver-university/contact-us.spec.js",
+    "smoke": "npx wdio --suite smoke"
   },
   "author": "Igor Turtsou",
   "license": "ISC",
@@ -19,9 +22,12 @@
     "@wdio/mocha-framework": "^8.32.3",
     "@wdio/spec-reporter": "^8.32.2",
     "chromedriver": "^125.0.0",
-    "wdio-chromedriver-service": "^8.1.1"
+    "wdio-chromedriver-service": "^8.1.1",
+    "wdio-geckodriver-service": "^5.0.2",
+    "wdio-selenium-standalone-service": "^0.0.12"
   },
   "dependencies": {
-    "allure-commandline": "^2.29.0"
+    "allure-commandline": "^2.29.0",
+    "geckodriver": "^4.4.1"
   }
 }
