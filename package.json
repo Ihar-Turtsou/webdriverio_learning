@@ -8,7 +8,8 @@
     "wdio": "wdio run ./wdio.conf.js",
     "automation-test-store-test": "npx wdio --spec test/specs/automation-test-store/add-items-to-basket.spec.js",
     "webdriver-university-test": "npx wdio --spec test/specs/webdriver-university/contact-us.spec.js",
-    "smoke": "npx wdio --suite smoke"
+    "smoke": "npx wdio --suite smoke",
+    "custom-env-uat":"npx wdio config/wdio.uat.conf.js --spec test/specs/webdriver-university/contact-us.spec.js"
   },
   "author": "Igor Turtsou",
   "license": "ISC",

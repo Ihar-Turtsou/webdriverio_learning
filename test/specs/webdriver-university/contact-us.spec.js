@@ -10,6 +10,7 @@ describe('webdriveruniversity - contact us page', function() {
   beforeEach(async () => {
     await ContactUsPage.open();
     console.log(`>>Broeser Object: + ${JSON.stringify(browser)}`);
+    // console.log("CONFIG ENV" + browser.config.environment);
     });
     
     it('valid submission - submit all information',async function() {

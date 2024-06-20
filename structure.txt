@@ -1,0 +1,53 @@
+C:\Users\Igor\Desktop\webdriverio_learning
+├── babel.config.js
+├── config
+|  └── wdio.uat.conf.js
+├── data
+|  ├── browser-object.json
+|  └── dummy_file.text
+├── example from wdio
+|  └── test
+|     ├── pageobjects
+|     |  ├── login.page.js
+|     |  ├── page.js
+|     |  └── secure.page.js
+|     └── specs
+|        ├── mocha-example.js
+|        └── test.e2e.js
+├── jsconfig.json
+├── notes.md
+├── package-lock.json
+├── package.json
+├── structure.txt
+├── test
+|  ├── pageObjects
+|  |  ├── automation-test-store
+|  |  |  ├── base.page.js
+|  |  |  ├── cart.page.js
+|  |  |  ├── components
+|  |  |  |  ├── caregory-menu.comp.js
+|  |  |  |  ├── header-nav.comp.js
+|  |  |  |  └── item.comp.js
+|  |  |  ├── home.page.js
+|  |  |  └── skincare.page.js
+|  |  └── webdriver-university
+|  |     ├── base.page.js
+|  |     └── contact-us.page.js
+|  └── specs
+|     ├── automation-test-store
+|     |  └── add-items-to-basket.spec.js
+|     ├── mocha-example.js
+|     └── webdriver-university
+|        ├── advanced-element-interactions.spec.js
+|        ├── async-example.spec.js
+|        ├── contact-us.spec.js
+|        ├── locating-elements.spec.js
+|        └── wait-commands.spec.js
+├── utils
+|  ├── commands.js
+|  └── data-generator.js
+└── wdio.conf.js
+
+directory: 2112 file: 17190
+
+ignored: directory (74)

@@ -67,28 +67,28 @@ exports.config = {
       maxInstances: 2,
       browserName: 'chrome',
       acceptInsecureCerts: true,
-      "goog:chromeOptions" : {
-        args: [
-          "--incognito"
-        ],
-      },
-      timeouts: {
-        "pageLoad": 30000
-      }
+      // "goog:chromeOptions" : {
+      //   args: [
+      //     "--incognito"
+      //   ],
+      // },
+      // timeouts: {
+      //   "pageLoad": 30000
+      // }
     },
-    {
-      maxInstances: 2,
-      browserName: 'firefox',
-      "moz:firefoxOptions" : {
-        args: [
-          "-privat"
-        ],
-      },
-      timeouts: {
-        "pageLoad": 30000
-      }
+  //   {
+  //     maxInstances: 2,
+  //     browserName: 'firefox',
+  //     "moz:firefoxOptions" : {
+  //       args: [
+  //         "-privat"
+  //       ],
+  //     },
+  //     timeouts: {
+  //       "pageLoad": 30000
+  //     }
      
-    }
+  //   }
   ],
 
   //
