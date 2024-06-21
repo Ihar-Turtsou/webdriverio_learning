@@ -67,14 +67,18 @@ exports.config = {
       maxInstances: 2,
       browserName: 'chrome',
       acceptInsecureCerts: true,
-      // "goog:chromeOptions" : {
-      //   args: [
-      //     "--incognito"
-      //   ],
-      // },
-      // timeouts: {
-      //   "pageLoad": 30000
-      // }
+      "goog:chromeOptions" : {
+        args: [
+          // "--incognito"
+        '--headless',   // Запускает браузер в headless режиме
+        '--disable-gpu', // Отключает использование GPU
+        '--no-sandbox', // Отключает режим песочницы
+        '--disable-dev-shm-usage'  // Отключает использование общей памяти
+        ],
+      },
+      timeouts: {
+        "pageLoad": 30000
+      }
     },
   //   {
   //     maxInstances: 2,
